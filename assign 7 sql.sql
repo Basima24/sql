@@ -39,26 +39,26 @@ VALUES
   ;
   select * from Country;
   
-
-INSERT INTO Persons (Fname, Lname, Population, Rating, Country_Id, Country_name)
-VALUES
-  ('Baby', 'John', 32000, 4.2, 1, 'United States'),
-  ('Mike', 'Tyson', 28000, 4.5, 2, 'Africa'),
-  ('Michael', 'Johnson', 31000, 4.8, 3, 'United Kingdom'),
-  ('Emily', 'Davis', 27000, 4.0, 4, 'India'),
-  ('Abraham', 'Williams', 29000, 4.3, 5, 'Australia'),
-  ('Majid', 'Khan', 26000, 4.7, 6, 'Bahrain'),
-  ('Leo', 'Fernandez', 30000, 4.1, 7, 'Brazil'),
-  ('Olivia', 'Müller', 33000, 4.6, 8, 'Germany'),
-  ('Noah', 'Dupont', 25000, 4.4, 9, 'France'),
-  ('Ching', 'Chan', 28000, 4.9, 10, 'Singapore')
-  ;
- select * from persons;
- select * from Country;
  
  -- 1. adding new column DOB in Persons table with data type as Date
  alter table Persons add DOB date;
  desc persons;
+INSERT INTO Persons (Fname, Lname, Population, Rating, Country_Id, Country_name,DOB)
+VALUES
+  ('Baby', 'John', 32000, 4.2, 1, 'United States','1993-05-11'),
+  ('Mike', 'Tyson', 28000, 4.5, 2, 'Africa','1990-09-16'),
+  ('Michael', 'Johnson', 31000, 4.8, 3, 'United Kingdom','1993-04-28'),
+  ('Emily', 'Davis', 27000, 4.0, 4, 'India','1995-09-25'),
+  ('Abraham', 'Williams', 29000, 4.3, 5, 'Australia','2000-09-03'),
+  ('Majid', 'Khan', 26000, 4.7, 6, 'Bahrain','2001-07-17'),
+  ('Leo', 'Fernandez', 30000, 4.1, 7, 'Brazil','1996-01-27'),
+  ('Olivia', 'Müller', 33000, 4.6, 8, 'Germany','1994-10-30'),
+  ('Noah', 'Dupont', 25000, 4.4, 9, 'France','2001-05-21'),
+  ('Ching', 'Chan', 28000, 4.9, 10, 'Singapore','2002-08-13');
+
+ select * from persons;
+ select * from Country;
+
  -- 2. Write a user-defined function to calculate age using DOB. 
  DELIMITER $$
 CREATE FUNCTION calculate_age(dob DATE)
